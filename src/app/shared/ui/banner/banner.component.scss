@@ -1,0 +1,38 @@
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    background-color: var(--secondary-color);
+    background-image: url("/img/subtle-white-feathers.png"), linear-gradient(-45deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 0 2px var(--shadow-color2), 0 2px 4px var(--shadow-color3);
+    padding: 25.25px calc(25px + 2%);
+
+    @media screen and (max-width: 1024px) {
+        padding: 24px;
+    }
+
+    @media screen and (max-width: 480px) {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    @media screen and (max-width: 162px) {
+        padding: calc(4% + 10vw) 15vw;
+    }
+
+    @media print {
+        height: 7vw;
+        width: var(--print-width);
+        left: 50%;
+        transform: translateX(-50%);
+        border: thin solid black;
+        box-shadow: none;
+        justify-content: center;
+        padding: 0;
+
+        @media (orientation: landscape) {
+            height: 6vw;
+        }
+    }
+}

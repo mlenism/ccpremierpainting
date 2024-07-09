@@ -1,0 +1,175 @@
+@mixin font-style {
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    color: var(--primary-color);
+    font-size: 14.5px;
+    font-family: var(--default-font);
+}
+
+.open-btn {
+    position: relative;
+    margin-right: 14px;
+    width: 152px;
+    height: 30px;
+    align-self: center;
+    border-radius: 2px;
+    padding-left: 26px;
+    @include font-style;
+
+    &:hover {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    &__mat-icon {
+        position: absolute;
+        left: 11px;
+        top: 4px;
+        font-size: 22px;
+    }
+
+    @media screen and (max-width: 175px) {
+        width: 60vw;
+        font-size: 8vw;
+        margin: 0;
+        padding: 0;
+
+        &__mat-icon {
+            display: none;
+        }
+    }
+
+    @media print {
+        display: none;
+    }
+}
+
+.modal {
+    width: 480px;
+    padding: 0;
+    margin-top: 115px;
+
+    &::backdrop {
+        background-color: var(--modal-background-color);
+    }
+
+    &[open] {
+        animation: show-modal 0.35s ease-out;
+    }
+
+    &.hide {
+        animation: hide-modal 0.35s ease-in;
+    }
+
+    &[open]::backdrop {
+        animation: show-backdrop 0.35s ease-out;
+    }
+
+    &.hide::backdrop {
+        animation: hide-backdrop 0.35s ease-in;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        padding: 10px 16px;
+        border-bottom: 1px solid var(--shadow-color);
+        @include font-style;
+        text-transform: none;
+        font-size: 16px;
+        font-weight: 700;
+        height: 52px;
+        box-sizing: border-box;
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        padding: 0px 22px;
+
+        &:first-child {
+            padding-top: 8px;
+        }
+
+        &:last-child {
+            padding-bottom: 10px;
+        }
+
+        a {
+            position: relative;
+            display: block;
+            padding: 8px 48px 8px 8px;
+            @include font-style;
+            text-transform: none;
+            color: var(--links-color);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--hover-links-color);
+            }
+        }
+    }
+
+    &__close-btn {
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        width: 32.97px;
+        height: 27.98px;
+        border-radius: 2px;
+        color: white;
+        font: 30px/0.5 Arial, Helvetica, sans-serif;
+
+        &:hover {
+            background-color: white;
+            color: var(--primary-color)
+        }
+    }
+
+    &__mat-icon {
+        position: absolute;
+        right: 0px;
+        top: 12px;
+        font-size: 1em;
+    }
+
+    @keyframes show-modal {
+        from {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+
+    @keyframes hide-modal {
+        to {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+    }
+
+    @keyframes show-backdrop {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes hide-backdrop {
+        to {
+            opacity: 0;
+        }
+    }
+}

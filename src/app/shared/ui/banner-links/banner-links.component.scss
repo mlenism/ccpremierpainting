@@ -1,0 +1,49 @@
+
+.list {
+    display: flex;
+    height: 220px;
+    object-fit: cover;
+    background-size: cover;
+    overflow: hidden;
+    
+    &__item {
+        display: block;
+        flex-grow: 1;
+        flex-basis: 0;
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            inset: 0 0 0 0;
+            opacity: 0.35;
+            background-color: black;
+            transition: opacity 0.8s linear, background-color 0.8s linear;
+        }
+        
+        &:hover {
+            &::after {
+                opacity: 0.8;
+                background-color: var(--links-color);
+            }
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        
+        h2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 1;
+            font: 1.5rem var(--times-font);
+        }
+    }
+}

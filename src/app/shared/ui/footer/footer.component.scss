@@ -1,0 +1,103 @@
+.top {
+    background-color: white;
+    position: relative;
+    height: 104px;
+
+    &__img {
+        position: absolute;
+        height: 75%;
+        inset: 50% 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 8px;
+        background-image: linear-gradient(var(--gradient-dark-color), var(--gradient-light-color), var(--gradient-dark-color));
+        top: 0;
+        transform: translateY(-100%);
+    }
+
+    @media screen and (max-width: 1024px) {
+        height: 136px;
+
+        &__img {
+            height: 58%;
+        }
+    }
+
+    @media screen and (max-width: 213px) {
+        height: calc(40px + 40vw);
+
+        &__img {
+            height: calc(20% + 30vw);
+        }
+    }
+
+    @media print {
+        display: none;
+    }
+}
+
+.down {
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 132px;
+    position: relative;
+    border-top: 1px solid var(--border-color);
+
+    &__address {
+        text-align: center;
+        margin: auto 10px;
+        position: absolute;
+        top: 12%;
+    }
+
+    &__p {
+        font-size: 10.5px;
+        color: white;
+        line-height: 1.5;
+        word-break: break-word;
+    }
+
+    @media screen and (max-width: 480px) {
+        height: 115px;
+    }
+
+    @media screen and (max-width: 155px) {
+        height: unset;
+
+        &__address {
+            position: unset;
+            top: unset;
+            margin: 13px 3px;
+        }
+
+        &__p {
+            font-size: 8px;
+        }
+    }
+
+    @media screen and (max-width: 90px) {
+        &__p {
+            font-size: 7px;
+        }
+    }
+
+    @media print {
+        border-top: 1px solid var(--shadow-color);
+        background-color: unset;
+        height: 1cm;
+        width: var(--print-width);
+        left: 50%;
+        transform: translateX(-50%);
+
+        &__p {
+            color: black;
+        }
+    }
+}

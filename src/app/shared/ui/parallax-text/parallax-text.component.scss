@@ -1,0 +1,83 @@
+.cover {
+    height: 70vh;
+    transition: height 0.2s ease-in-out;
+    width: 100%;
+
+    &__title {
+        font-size: 2.33rem;
+        font-family: var(--times-font);
+        transition: font-size 0.2s ease-in-out;
+        line-height: 1.1;
+    }
+
+    &__subtitle {
+        font-size: 1rem;
+        font-family: var(--default-font);
+        letter-spacing: 0px;
+        line-height: 1.4;
+        transition: font-size 0.2s ease-in-out;
+    }
+
+    &__title,
+    &__subtitle {
+        color: white;
+        z-index: 1;
+        margin: 5.5px 53px;
+    }
+
+    @media screen and (max-width: 480px) {
+        height: 50vh;
+
+        &__title {
+            font-size: 2.1rem;
+            letter-spacing: -1.1px;
+        }
+
+        &__subtitle {
+            font-size: 0.84rem;
+        }
+
+        &__title,
+        &__subtitle {
+            margin: 3.5px 42px;
+        }
+    }
+
+    @media screen and (max-width: 227px) {
+        height: 40vh;
+
+        &__title {
+            font-size: calc(4vw + 60%);
+        }
+
+        &__subtitle {
+            font-size: calc(3vw + 50%);
+        }
+
+        &__title,
+        &__subtitle {
+            margin: 1vw 5vw;
+        }
+    }
+}
+
+.center {
+    align-self: center;
+    text-align: center;
+}
+
+.shadow-gradient {
+    background: linear-gradient(to right, var(--shadow-color4), var(--shadow-color5), var(--shadow-color4));
+}
+
+.huge {
+    height: 115vh;
+}
+
+.text-bigger {
+    font-size: 1.2rem;
+}
+
+.box-bigger {
+    padding: 8px;
+}

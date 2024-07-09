@@ -1,0 +1,30 @@
+<section class="fragment" [ngClass]="sectionClass()">
+    @if(fragment().image.url){
+    <img class="fragment__image" [src]="fragment().image.url" [alt]="fragment().image.alt"
+        [title]="fragment().image.title" />
+    }
+    @if(fragment().header.title){
+    <h2 class="fragment__title">{{fragment().header.title}}</h2>
+    }
+    @if(fragment().header.subtitle){
+    <h3 class="fragment__subtitle">{{fragment().header.subtitle}}</h3>
+    }
+    @for (description of fragment().descriptions; track description) {
+    <p class="fragment__description">{{description.paragraph}}
+        @for (link of description.links; track link; let last = $last) {
+        <a [routerLink]="link.url">{{link.name}}</a>
+        @if (!last) {, }
+        }
+        @if (description.textAfterLinks) {
+        <span> {{description.textAfterLinks}}</span>
+        }
+    </p>
+    @if(description.list && description.list.length) {
+    <ul class="fragment__list">
+        @for (item of description.list; track item) {
+        <li>{{item}}</li>
+        }
+    </ul>
+    }
+    }
+</section>

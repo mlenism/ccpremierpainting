@@ -1,0 +1,12 @@
+<app-banner-text [contentTitle]="content().title" />
+<main class="main">
+    <article class="content">
+        @for (fragment of content().fragments; track fragment; let first = $first) {
+        @if (!first) {
+        <span class="content__break"></span>
+        }
+        <app-fragment [fragment]="fragment" />
+        }
+        <button class="content__contact-btn">Contact Us</button>
+    </article>
+</main>

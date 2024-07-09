@@ -1,0 +1,8 @@
+<div class="cover" [ngClass]="coverClass()">
+    <app-parallax [backgroundImg]="content().image" [velocity]="velocity()" [backgroundClass]="backgroundClass()"
+        [overlayClass]="overlayClass()">
+        <h2 class="cover__title" [ngClass]="titleClass()">{{content().header.title}}</h2>
+        <h3 class="cover__subtitle" [ngClass]="subtitleClass()">{{content().header.subtitle}}</h3>
+        <ng-content></ng-content>
+    </app-parallax>
+</div>

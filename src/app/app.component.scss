@@ -1,0 +1,25 @@
+.background {
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: fit-content;
+    min-height: 100vh;
+}
+
+.app-container {
+    flex-grow: 1;
+}
+
+@media print {
+    .background {
+        overflow: unset;
+    }
+    
+    .background, .app-container {
+        background-color: white;
+    }
+}

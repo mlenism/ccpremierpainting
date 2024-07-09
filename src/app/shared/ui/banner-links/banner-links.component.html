@@ -1,0 +1,10 @@
+@if (links().length) {
+<ul class="list">
+    @for (link of links(); track link) {
+    <li class="list__item">
+        <img [src]="link.image.url" [alt]="link.image.alt" [title]="link.image.title">
+        <h2>{{link.header.title}}</h2>
+    </li>
+    }
+</ul>
+}

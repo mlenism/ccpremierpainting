@@ -1,0 +1,6 @@
+<header class="parallax" #parallax (waResizeObserver)="onEvent()">
+    <img class="parallax__background" #background [src]="backgroundImg().url" [alt]="backgroundImg().alt"
+        [title]="backgroundImg().title" [ngClass]="backgroundClass()">
+    <div class="parallax__overlay" [ngClass]="overlayClass()"></div>
+    <ng-content />
+</header>

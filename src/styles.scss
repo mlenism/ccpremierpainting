@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-color: #07c4e9;
+    --secondary-color: #0166e2;
+    --paragraph-color: #4e4e4e;
+    --tertiary-color: #ff7c38;
+    --hover-links-color: #fec826;
+    --gradient-dark-color: #0251b3;
+    --gradient-light-color: #015ECF;
+    --border-color: #01479E;
+    --color6: #e2e2e2;
+    --color7: #d7d7d7;
+    --color8: #bebebe;
+    --color9: #c8c8c8;
+    --shadow-color: rgba(0,0,0,.3);
+    --shadow-color2: rgba(0, 0, 0, 0.06);
+    --shadow-color3: rgba(0, 0, 0, 0.12);
+    --shadow-color4: rgba(0,0,0,.0);
+    --shadow-color5: rgba(0,0,0,.75);
+    --modal-background-color: rgba(0,0,0,.5);
+    --transparent-color: #ffffff00 ;
+    --links-color: #fe7026;
+    --color13: rgba(255,207,0,1);
+    --color14: #f9f9f9;
+    --color15: #f4f4f4;
+    --nav-bar-z-index: 3;
+    --default-font: 'Montserrat', Helvetica, Arial, sans-serif;
+    --times-font:  Georgia, 'Times New Roman', Times, serif;
+    --print-width: 95%;
+}
+
+* {
+    font-family: var(--default-font);
+    color: var(--paragraph-color);
+}
+
+html, body, button, h1, h2, h3, h4, h5, h6, ul, li, p {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button, dialog {
+    border: none;
+}
+
+.mat-typography h1,
+.mat-typography h2,
+.mat-typography h3,
+.mat-typography h4,
+.mat-typography h5,
+.mat-typography h6,
+.mat-typography p {
+    margin: 0;
+    padding: 0;
+}

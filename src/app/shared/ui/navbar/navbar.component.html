@@ -1,0 +1,38 @@
+<header>
+    <div class="top">
+        <app-navbar-modal [modalInfo]="content().modalInfo" />
+    </div>
+    <div class="down">
+        @if (content().image.url) {
+        <a [routerLink]="content().imageLink">
+            <img class="down__img" [title]="content().image.title" [alt]="content().image.alt"
+                [src]="content().image.url" /></a>
+        }
+        @if (content().links.length) {
+        <button class="down__open-btn" type='button' title="Open Menu" name="Open Menu" (click)="showMenu()">
+            <mat-icon class="down__mat-icon">menu_open</mat-icon>
+        </button>
+        <nav class="down__menu" [ngClass]="menuClass" [cdkTrapFocus]="menuClass === 'open' ? '' : null">
+            <ul class="down__list">
+                @for (link of content().links; track link) {
+                @if (link.sublinks.length) {
+                <li class="down__item"><a [routerLink]="link.url">{{link.name}}
+                        <mat-icon class="down__mat-icon">expand_more</mat-icon></a>
+                    <ul class="down__list down__sub-list">
+                        @for (sublink of link.sublinks; track sublink) {
+                        <li class="down__item down__sub-item"><a [routerLink]="sublink.url">{{sublink.name}}</a></li>
+                        }
+                    </ul>
+                </li>
+                }
+                @else {
+                <li class="down__item"><a [routerLink]="link.url">{{link.name}}</a></li>
+                }
+                }
+            </ul>
+            <button class="down__close-btn" type='button' title="Close Menu" name="Close Menu"
+                (click)="closeMenu()">&#215;</button>
+        </nav>
+        }
+    </div>
+</header>

@@ -1,0 +1,16 @@
+<button class="open-btn" type='button' [title]="modalInfo().buttonTitle" [name]="modalInfo().buttonTitle" (click)="showModal()">
+    <mat-icon class="open-btn__mat-icon">{{modalInfo().buttonIcon}}</mat-icon>
+    {{modalInfo().buttonTitle}}
+</button>
+<dialog  class="modal" #modal [class.hide]="isModalClosing">
+    <h2 class="modal__title">{{modalInfo().title}}</h2>
+    <button class="modal__close-btn" title="Close" name="Close" (click)="closeModal()">&#215;</button>
+    @if (modalInfo().items.length) {
+    <ul class="modal__list">
+        @for (item of modalInfo().items; track item) {
+        <li class="modal__item"><a [href]="item.href">{{item.name}}
+                <mat-icon class="modal__mat-icon">{{item.icon}}</mat-icon></a></li>
+        }
+    </ul>
+    }
+</dialog>
